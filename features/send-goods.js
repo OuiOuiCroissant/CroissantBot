@@ -4,14 +4,14 @@ module.exports = function(controller) {
   const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
   bby.products(8880044,{show:`name,salePrice,image`}).then(function(data){
+    var _name = data.name;
+    var _image = data.image;
+    var _price = data.salePrice;
 
   controller.hears('Yo', 'message', function(bot, message) {
 
-        var _name = data.name;
-        var _image = data.name;
-        var _price = data.salePrice;
         var attachment = {
-          title:'Avaliable goods',
+          text:'Avaliable goods',
           type:'template',
           payload:{
             template_type:'generic',
@@ -23,8 +23,13 @@ module.exports = function(controller) {
                 buttons:[
                   {
                     type:'postback',
-                    title:'Buy',
-                    payload:'buy'
+                    title:'Add to cart',
+                    payload:'add-to-cart'
+                  },
+                  {
+                    type:'postback',
+                    title:'More information',
+                    payload:'more-information'
                   }
                 ]
               },
