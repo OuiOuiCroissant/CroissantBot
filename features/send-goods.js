@@ -3,7 +3,7 @@ const search = bby.products('upc=' + process.argv[2]);
 
 search.then(processData);
 
-function(processData) {
+function processData (data) {
   var product = data.products[0];
   return product;
 };
