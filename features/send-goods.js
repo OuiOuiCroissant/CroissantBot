@@ -1,11 +1,18 @@
 const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
+const search = bby.products('upc=' + process.argv[2]);
+
+search.then(processData);
+
+function(processData) {
+  var product = data.products[0];
+  return product;
+};
 
 module.exports = function(controller) {
 
   controller.hears('Yo', 'message', function(bot, message) {
 
-    bby.products(8880044,{show:`name,salePrice,image,class`}).then(function(data){
-      console.log(data);
+
         var attachment = {
           title:'Avaliable goods',
           type:'template',
@@ -13,9 +20,9 @@ module.exports = function(controller) {
             template_type:'generic',
             elements:[
               {
-                title:` ${data.products.name }`,
-                image_url:` ${data.products.image }`,
-                subtitle:` ${data.products.salePrice }$`,
+                title:` ${product.name }`,
+                image_url:` ${product.image }`,
+                subtitle:` ${product.salePrice }$`,
                 buttons:[
                   {
                     type:'postback',
@@ -29,6 +36,5 @@ module.exports = function(controller) {
         };
 
        bot.reply(message, {attachment: attachment,});
-    });
   });
 }
