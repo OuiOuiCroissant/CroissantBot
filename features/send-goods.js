@@ -17,7 +17,6 @@ module.exports = function(controller) {
           payload:'shop-now'
         }
         ]
-      }
     });
   });
 }
