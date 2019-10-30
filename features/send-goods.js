@@ -19,7 +19,7 @@ module.exports = function(controller) {
               {
                 title: _name,
                 image_url: _image ,
-                subtitle: _salePrice,
+                subtitle: _price,
                 buttons:[
                   {
                     type:'postback',
