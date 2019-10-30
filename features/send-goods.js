@@ -11,7 +11,6 @@ module.exports = function(controller) {
   controller.hears('Yo', 'message', function(bot, message) {
 
         var attachment = {
-          text:'Avaliable goods',
           type:'template',
           payload:{
             template_type:'generic',
