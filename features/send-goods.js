@@ -13,9 +13,9 @@ module.exports = function(controller) {
             template_type:'generic',
             elements:[
               {
-                title:` ${data.products[0].name }`,
-                image_url:` ${data.products[0].image }`,
-                subtitle:` ${data.products[0].salePrice }$`,
+                title:` ${data.products.name }`,
+                image_url:` ${data.products.image }`,
+                subtitle:` ${data.products.salePrice }$`,
                 buttons:[
                   {
                     type:'postback',
