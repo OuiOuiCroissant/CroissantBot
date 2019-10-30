@@ -7,7 +7,9 @@ module.exports = function(controller) {
 
   controller.hears('Yo', 'message', function(bot, message) {
 
-
+        var _name = data.name;
+        var _image = data.name;
+        var _price = data.salePrice;
         var attachment = {
           title:'Avaliable goods',
           type:'template',
@@ -15,9 +17,9 @@ module.exports = function(controller) {
             template_type:'generic',
             elements:[
               {
-                title:` ${data.name }`,
-                image_url:` ${data.image }`,
-                subtitle:` ${data.salePrice }$`,
+                title: _name,
+                image_url: _image ,
+                subtitle: _salePrice,
                 buttons:[
                   {
                     type:'postback',
