@@ -32,6 +32,7 @@ module.exports = function(controller) {
                 }
             };
             bot.reply(message, {attachment: attachment,});
+          }
 
     });
   });
