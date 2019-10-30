@@ -77,7 +77,7 @@ controller.ready(() => {
 });
 /*
 bby.products(8880044,{show:`name,salePrice,categoryPath.name,class`}).then(function(data){
-  console.log(data);
+  console.log(data.name);
 });
 */
 controller.webserver.get('/', (req, res) => {
