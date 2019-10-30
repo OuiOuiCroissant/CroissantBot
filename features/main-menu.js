@@ -1,6 +1,6 @@
 module.exports = function(controller) {
 
-    controller.hears('Get Started', 'message',  async(bot, message) => {
+    /*controller.hears('Get Started', 'message',  async(bot, message) => {
 
         await bot.reply(message,{
             text: 'Lets start',
@@ -11,7 +11,7 @@ module.exports = function(controller) {
             }
           ]
         });
-    });
+    });*/
 
     controller.hears('Main menu', 'message', async(bot, message) => {
 
