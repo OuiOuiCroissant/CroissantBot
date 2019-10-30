@@ -1,39 +1,34 @@
+const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
+
 module.exports = function(controller) {
-  const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
   controller.hears('Yo', 'message', async(bot, message) => {
 
-    await bby.products(`type="${ message.quick_reply.payload }"`,{show:"image,name,salePrice"}).then(function(data){
-            for(let i=0; i<5;i++)
-            {
-            var attachment = {
-                type:'template',
-                payload:{
-                    template_type:'generic',
-                    elements:[
-                        {
-                            title:` ${data.products[i].name }`,
-                            image_url:` ${data.products[i].image }`,
-                            subtitle:` ${data.products[i].salePrice }$`,
-                            buttons:[
-                                {
-                                type:'postback',
-                                title:'Buy',
-                                payload:'buy'
-                                },
-                                {
-                                    type:'postback',
-                                    title:'Add to favorite',
-                                    payload:'add-to-favorite'
-                            }
-                            ]
-                        },
-                    ]
-                }
-            };
-            bot.reply(message, {attachment: attachment,});
+    bby.products(8880044,{show:`name,salePrice,image,class`}).then(function(data){
+      console.log(data);
+        var attachment = {
+          title:'Avaliable goods',
+          type:'template',
+          payload:{
+            template_type:'generic',
+            elements:[
+              {
+                title:` ${data.products[0].name }`,
+                image_url:` ${data.products[0].image }`,
+                subtitle:` ${data.products[0].salePrice }$`,
+                buttons:[
+                  {
+                    type:'postback',
+                    title:'Buy',
+                    payload:'buy'
+                  }
+                ]
+              },
+            ]
           }
+        };
 
+        await  bot.reply(message, {attachment: attachment,});
     });
   });
 }
