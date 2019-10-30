@@ -3,12 +3,11 @@ const search = bby.products('upc=' + process.argv[2]);
 
 search.then(processData);
 
-function processData (data) {
-  var product = data.products[0];
-  return product;
-};
 
 module.exports = function(controller) {
+
+  function processData (data) {
+    var product = data.products[0];
 
   controller.hears('Yo', 'message', function(bot, message) {
 
@@ -36,5 +35,6 @@ module.exports = function(controller) {
         };
 
        bot.reply(message, {attachment: attachment,});
+     };
   });
 }
