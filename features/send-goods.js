@@ -2,7 +2,7 @@ const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
 module.exports = function(controller) {
 
-  controller.hears('Yo', 'message', async(bot, message) => {
+  controller.hears('Yo', 'message', function(bot, message) => {
 
     bby.products(8880044,{show:`name,salePrice,image,class`}).then(function(data){
       console.log(data);
@@ -28,7 +28,7 @@ module.exports = function(controller) {
           }
         };
 
-        await  bot.reply(message, {attachment: attachment,});
+       bot.reply(message, {attachment: attachment,});
     });
   });
 }
