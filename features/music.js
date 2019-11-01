@@ -4,7 +4,7 @@ module.exports = function (controller) {
   bby.products('categoryPath.id=cat02001',{show:`name,salePrice,image`}).then(function(data){
 
     controller.hears('Music', 'message', function(bot, message) {
-      for (let i=0; ; i++) {
+      for (let i=0; i<10; i++) {
         var attachment = {
           type:'template',
           payload:{
