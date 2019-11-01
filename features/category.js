@@ -59,7 +59,7 @@ module.exports = function(controller)  {
       });
   });
 
-  controller.hears(['Get referal link','Music','Specialty gift cards'], 'message',  async(bot, message) => {
+  controller.hears('Get referal link', 'message',  async(bot, message) => {
 
       await bot.reply(message,{
           text: `Currently that don't make anything`,
@@ -72,19 +72,4 @@ module.exports = function(controller)  {
       });
   });
 
-  controller.hears('Movies & TV Shows', 'message', async(bot, message) => {
-
-    var attachment = {
-    type: "image",
-    payload: {
-        url: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/8880/8880044_so.jpg",
-        is_reusable: true
-    }
-};
-
-  await bot.reply(message, {
-        attachment: attachment,
-    });
-
-});
 }

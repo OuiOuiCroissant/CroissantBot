@@ -1,5 +1,3 @@
-
-
 module.exports = function(controller) {
   const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 

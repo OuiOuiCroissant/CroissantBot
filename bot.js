@@ -75,11 +75,15 @@ controller.ready(() => {
     }
 
 });
-/*
+
 bby.products(8880044,{show:`name,salePrice,categoryPath.name,class`}).then(function(data){
   console.log(data.name);
 });
+/*bby.products('categoryPath.id=abcat0901005',{show:'sku,name,salePrice'}).then(function(data){
+  console.log(data);
+});
 */
+
 controller.webserver.get('/', (req, res) => {
 
     res.send(`This app is running Botkit ${ controller.version }.`);
