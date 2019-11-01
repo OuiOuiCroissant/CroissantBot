@@ -27,7 +27,6 @@ module.exports = function (controller) {
         };
 
         bot.reply(message, {
-         text:'Here are available goods',
          quick_replies: [
            {
              title: "Main menu",
