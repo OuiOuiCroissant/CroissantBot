@@ -1,7 +1,7 @@
 module.exports = function(controller) {
 
-  controller.on('channel_join', async(bot, message) => {
-    await bot.reply(message,'Welcome to my first bot!');
+  controller.on('facebook_optin', function(bot, message) {
+    bot.reply(message, 'Welcome to my first facebook messenger bot');
   });
 
 }
