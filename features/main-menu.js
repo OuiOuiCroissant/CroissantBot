@@ -5,10 +5,6 @@ module.exports = function(controller) {
         locale:"default",
         composer_input_disabled:true,
         call_to_actions:[
-            {
-                title:"Persistent menu",
-                type:"nested",
-                call_to_actions:[
                     {
                         title:"Main menu",
                         type:"postback",
@@ -18,14 +14,13 @@ module.exports = function(controller) {
                         title:"Catalogue",
                         type:"postback",
                         payload:"catalogue"
+                    },
+                    {
+                      title:"My Purchases",
+                      type:"postback",
+                      payload:"my-purchases"
                     }
-                ]
-            },
-            {
-                title:"My Purchases",
-                type:"postback",
-                payload:"my-purchases"
-            }
+
         ]
       }
       console.log(persistent_menu);
@@ -37,7 +32,7 @@ module.exports = function(controller) {
               payload: "main-menu"
             }
           ]*/
-          persistent_menu
+          attachment:persistent_menu
         });
     });
 
