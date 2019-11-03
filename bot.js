@@ -7,6 +7,7 @@
 // Import Botkit's core features
 const { Botkit } = require('botkit');
 const { BotkitCMSHelper } = require('botkit-plugin-cms');
+const { FacebookAPI } = require('botbuilder-adapter-facebook');
 const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
 // Import a platform-specific adapter for facebook.
@@ -83,6 +84,42 @@ bby.products(8880044,{show:`name,salePrice,categoryPath.name,class`}).then(funct
   console.log(data);
 });
 */
+let api = new FacebookAPI(process.env.FACEBOOK_VERIFY_TOKEN, process.env.FACEBOOK_APP_SECRET);
+
+controller.api.messenger_profile.greeting('My first facebook messenger bot');
+controller.api.messenger_profile.get_started('sample_get_started_payload');
+controller.api.messenger_profile.menu([{
+        locale:"default",
+        composer_input_disabled:true,
+        call_to_actions:[
+            {
+                title:"Persistent menu",
+                type:"nested",
+                call_to_actions:[
+                    {
+                        title:"Main menu",
+                        type:"postback",
+                        payload:"main-menu"
+                    },
+                    {
+                        title:"Catalogue",
+                        type:"postback",
+                        payload:"catalogue"
+                    }
+                ]
+            },
+            {
+                title:"My Purchases",
+                type:"postback",
+                payload:"my-purchases"
+            }
+        ]
+    },
+    {
+        locale:"default",
+        composer_input_disabled:true
+    }
+]);
 
 controller.webserver.get('/', (req, res) => {
 
