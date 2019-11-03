@@ -7,7 +7,6 @@
 // Import Botkit's core features
 const { Botkit } = require('botkit');
 const { BotkitCMSHelper } = require('botkit-plugin-cms');
-const { FacebookAPI } = require('botbuilder-adapter-facebook');
 const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
 // Import a platform-specific adapter for facebook.
@@ -84,11 +83,11 @@ bby.products(8880044,{show:`name,salePrice,categoryPath.name,class`}).then(funct
   console.log(data);
 });
 */
-let api = new FacebookAPI(process.env.FACEBOOK_VERIFY_TOKEN, process.env.FACEBOOK_APP_SECRET);
-
-controller.api.messenger_profile.greeting('My first facebook messenger bot');
-controller.api.messenger_profile.get_started('sample_get_started_payload');
-controller.api.messenger_profile.menu([{
+/*
+console.log(controller.api());
+controller.greeting('My first facebook messenger bot');
+controller.get_started('sample_get_started_payload');
+controller.menu([{
         locale:"default",
         composer_input_disabled:true,
         call_to_actions:[
@@ -120,7 +119,7 @@ controller.api.messenger_profile.menu([{
         composer_input_disabled:true
     }
 ]);
-
+*/
 controller.webserver.get('/', (req, res) => {
 
     res.send(`This app is running Botkit ${ controller.version }.`);
