@@ -31,7 +31,10 @@ module.exports = function(controller) {
               payload: "main-menu"
             }
           ]*/
-          attachment:persistent_menu
+          get_started:{
+            
+          payload:persistent_menu
+        }
         });
     });
 
