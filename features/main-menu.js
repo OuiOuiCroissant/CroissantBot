@@ -30,8 +30,8 @@ module.exports = function(controller) {
       }
       console.log(persistent_menu);
         await bot.reply(message,{
-            /*text: 'Lets start',
-            quick_replies: [
+            text: 'Lets start',
+            /*quick_replies: [
             {
               title: "Main menu",
               payload: "main-menu"
