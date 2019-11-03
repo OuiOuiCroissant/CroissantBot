@@ -79,47 +79,7 @@ controller.ready(() => {
 bby.products(8880044,{show:`name,salePrice,categoryPath.name,class`}).then(function(data){
   console.log(data.name);
 });
-/*bby.products('categoryPath.id=abcat0901005',{show:'sku,name,salePrice'}).then(function(data){
-  console.log(data);
-});
-*/
-/*
-console.log(controller.api());
-controller.greeting('My first facebook messenger bot');
-controller.get_started('sample_get_started_payload');
-controller.menu([{
-        locale:"default",
-        composer_input_disabled:true,
-        call_to_actions:[
-            {
-                title:"Persistent menu",
-                type:"nested",
-                call_to_actions:[
-                    {
-                        title:"Main menu",
-                        type:"postback",
-                        payload:"main-menu"
-                    },
-                    {
-                        title:"Catalogue",
-                        type:"postback",
-                        payload:"catalogue"
-                    }
-                ]
-            },
-            {
-                title:"My Purchases",
-                type:"postback",
-                payload:"my-purchases"
-            }
-        ]
-    },
-    {
-        locale:"default",
-        composer_input_disabled:true
-    }
-]);
-*/
+
 controller.webserver.get('/', (req, res) => {
 
     res.send(`This app is running Botkit ${ controller.version }.`);
