@@ -9,6 +9,9 @@ const { Botkit } = require('botkit');
 const { BotkitCMSHelper } = require('botkit-plugin-cms');
 const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
+var cartValue = [];
+var cartPositions = [];
+var reducer = (accumulator, currentValue) => accumulator + currentValue;
 // Import a platform-specific adapter for facebook.
 
 const { FacebookAdapter, FacebookEventTypeMiddleware } = require('botbuilder-adapter-facebook');
@@ -76,9 +79,6 @@ controller.ready(() => {
 
 });
 
-var cartValue = [];
-var cartPositions = [];
-var reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 bby.products(8880044,{show:`name,salePrice,categoryPath.name,class`}).then(function(data){
   console.log(data.name);
