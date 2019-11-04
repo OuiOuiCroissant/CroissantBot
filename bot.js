@@ -76,6 +76,10 @@ controller.ready(() => {
 
 });
 
+var cartValue = [];
+var cartPositions = [];
+var reducer = (accumulator, currentValue) => accumulator + currentValue;
+
 bby.products(8880044,{show:`name,salePrice,categoryPath.name,class`}).then(function(data){
   console.log(data.name);
 });
