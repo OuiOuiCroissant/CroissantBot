@@ -107,6 +107,7 @@ module.exports = function (controller) {
           cartValue.push(data.products[9].salePrice);
           cartPositions.push(data.products[9].name);
         };
+        console.log(cartValue,cartPositions);
 
         bot.reply(messege, {
           text: 'You added item to cart',
