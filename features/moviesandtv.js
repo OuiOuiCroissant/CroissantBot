@@ -63,6 +63,7 @@ module.exports = function (controller) {
          attachment: attachment
         });
       };
+      });
 
       controller.on('facebook_postback', function(bot, message){
 
@@ -127,6 +128,6 @@ module.exports = function (controller) {
           ]
         });
       });
-    });
+
   });
 }
