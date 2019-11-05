@@ -72,7 +72,7 @@ module.exports = function (controller) {
       controller.hears('movie-add-to-cart4', 'facebook_postback', async (bot, message) => {
 
 
-        console.log(cartValue,cartPositions);
+        console.log(movieCartValue,movieCartPositions);
 
         await bot.reply(messege, {
           text: 'You added item to cart',
