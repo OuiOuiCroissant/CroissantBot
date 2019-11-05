@@ -65,49 +65,9 @@ module.exports = function (controller) {
       };
       });
 
-      controller.hears('Add to cart','message', async(bot, message) => {
+      controller.hears(async(message) => { return (message.attachment.payload.elements[0].buttons[0].payload=='movie-add-to-cart4')}, 'message', (bot, message) => {
 
-        switch(message.attachment.payload.elements[0].buttons[0].payload){
-          case 'movie-add-to-cart0':
-          cartValue.push(data.products[0].salePrice);
-          cartPositions.push(data.products[0].name);
-          break;
-          case 'movie-add-to-cart1':
-          cartValue.push(data.products[1].salePrice);
-          cartPositions.push(data.products[1].name);
-          break;
-          case 'movie-add-to-cart2':
-          cartValue.push(data.products[2].salePrice);
-          cartPositions.push(data.products[2].name);
-          break;
-          case 'movie-add-to-cart3':
-          cartValue.push(data.products[3].salePrice);
-          cartPositions.push(data.products[3].name);
-          break;
-          case 'movie-add-to-cart4':
-          cartValue.push(data.products[4].salePrice);
-          cartPositions.push(data.products[4].name);
-          break;
-          case 'movie-add-to-cart5':
-          cartValue.push(data.products[5].salePrice);
-          cartPositions.push(data.products[5].name);
-          break;
-          case 'movie-add-to-cart6':
-          cartValue.push(data.products[6].salePrice);
-          cartPositions.push(data.products[6].name);
-          break;
-          case 'movie-add-to-cart7':
-          cartValue.push(data.products[7].salePrice);
-          cartPositions.push(data.products[7].name);
-          break;
-          case 'movie-add-to-cart8':
-          cartValue.push(data.products[8].salePrice);
-          cartPositions.push(data.products[8].name);
-          break;
-          case 'movie-add-to-cart9':
-          cartValue.push(data.products[9].salePrice);
-          cartPositions.push(data.products[9].name);
-        };
+
         console.log(cartValue,cartPositions);
 
         await bot.reply(messege, {
