@@ -1,7 +1,7 @@
 module.exports = function (controller) {
   const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
-  const { cartValue, cartPositions, reducer } = require('/bot.js');
+  const { cartValue, cartPositions, reducer } = require('../bot');
 
   bby.products('categoryPath.id=cat02015',{show:`name,salePrice,image`}).then(function(data){
 
