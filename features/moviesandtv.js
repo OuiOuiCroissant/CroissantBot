@@ -65,7 +65,7 @@ module.exports = function (controller) {
       };
     });
 
-      controller.hears(async(message) => { return (message.attachment.payload.elements[0].buttons[0].payload=='movie-add-to-cart4')}, 'message', async (bot, message) => {
+      controller.hears('movie-add-to-cart4', 'facebook_postback', async (bot, message) => {
 
 
         console.log(cartValue,cartPositions);
