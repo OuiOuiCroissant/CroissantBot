@@ -74,7 +74,7 @@ module.exports = function (controller) {
 
         console.log(movieCartValue,movieCartPositions);
 
-        await bot.reply(messege, {
+        await bot.reply(message, {
           text: 'You added item to cart',
           quick_replies: [
             {
