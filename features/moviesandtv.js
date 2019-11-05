@@ -102,7 +102,7 @@ module.exports = function (controller) {
           cartPositions.push(data.products[9].name);
         };
 
-        console.log(movieCartValue,movieCartPositions);
+        console.log(cartValue,cartPositions);
 
         await bot.reply(message, {
           text: 'You added item to cart',

@@ -3,9 +3,10 @@ module.exports = function(controller) {
   const { cartValue, cartPositions, reducer } = require('../bot');
 
   controller.hears('View cart','message', async(bot, message) => {
+    var cartCost = cartValue.reduce(reducer);
 
     await bot.reply(message,{
-      text: `Your cart total cost: ${cartValue.reduce(reducer)}$! It contains: ${cartPositions}`,
+      text: `Your cart total cost: ${cartCost}$! It contains: ${cartPositions}`,
       quick_replies: [
         {
           title:'Checkout',
