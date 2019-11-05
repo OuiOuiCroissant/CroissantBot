@@ -1,5 +1,7 @@
 module.exports = function(controller) {
 
+  const { cartValue, cartPositions, reducer } = require('/bot.js');
+
   controller.hears('View cart','message', async(bot, message) => {
 
     await bot.reply(message,{

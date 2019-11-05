@@ -9,6 +9,12 @@ const { Botkit } = require('botkit');
 const { BotkitCMSHelper } = require('botkit-plugin-cms');
 const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
+const cartValue = [];
+const cartPositions = [];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+module.exports = { cartValue, cartPositions, reducer}
+
 // Import a platform-specific adapter for facebook.
 
 const { FacebookAdapter, FacebookEventTypeMiddleware } = require('botbuilder-adapter-facebook');
