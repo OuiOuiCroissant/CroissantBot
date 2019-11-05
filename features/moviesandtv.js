@@ -63,6 +63,7 @@ module.exports = function (controller) {
          attachment: attachment
         });
       };
+      });
 
       controller.hears('Add to cart','message', function(bot, message){
 
@@ -127,6 +128,6 @@ module.exports = function (controller) {
           ]
         });
       });
-    });
+
   });
 }
