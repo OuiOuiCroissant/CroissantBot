@@ -63,7 +63,7 @@ module.exports = function (controller) {
          attachment: attachment
         });
       };
-      });
+
 
       controller.hears(async(message) => { return (message.attachment.payload.elements[0].buttons[0].payload=='movie-add-to-cart4')}, 'message', async (bot, message) => {
 
@@ -88,6 +88,6 @@ module.exports = function (controller) {
           ]
         });
       });
-
+    });
   });
 }
