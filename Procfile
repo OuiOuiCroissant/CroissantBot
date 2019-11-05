@@ -1,1 +1,1 @@
-web: node bot.js
+web: npm run test && npm run start
