@@ -63,9 +63,8 @@ module.exports = function (controller) {
          attachment: attachment
         });
       };
-      });
 
-      controller.on('facebook_postback', function(bot, message){
+      controller.hears('Add to cart','message', function(bot, message){
 
         switch(message.attachment.payload.elements[0].buttons[0].payload){
           case 'movie-add-to-cart0':
@@ -128,6 +127,6 @@ module.exports = function (controller) {
           ]
         });
       });
-
+    });
   });
 }
