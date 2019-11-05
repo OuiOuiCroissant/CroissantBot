@@ -9,8 +9,8 @@ const { Botkit } = require('botkit');
 const { BotkitCMSHelper } = require('botkit-plugin-cms');
 const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
-const cartValue = [];
-const cartPositions = [];
+const cartValue = [0];
+const cartPositions = [0];
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 module.exports = { cartValue, cartPositions, reducer}
