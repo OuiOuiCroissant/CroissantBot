@@ -65,6 +65,7 @@ module.exports = function (controller) {
          attachment: attachment
         });
       };
+          });
 
 
       controller.hears([`movie-add-to-cart${i}`], 'facebook_postback', async (bot, message) => {
@@ -122,6 +123,6 @@ module.exports = function (controller) {
           ]
         });
       });
-    });
+
   });
 }
