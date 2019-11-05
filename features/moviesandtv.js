@@ -1,6 +1,10 @@
 module.exports = function (controller) {
   const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
+  const movieCartValue = [];
+  const movieCartPositions = [];
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
   bby.products('categoryPath.id=cat02015',{show:`name,salePrice,image`}).then(function(data){
 
     /*var cartArray = [];
