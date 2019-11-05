@@ -67,7 +67,7 @@ module.exports = function (controller) {
 
       controller.on('facebook_postback', function(bot, message){
 
-        switch(attachment.payload.elements[0].buttons[0].payload){
+        switch(message.attachment.payload.elements[0].buttons[0].payload){
           case 'movie-add-to-cart0':
           cartValue.push(data.products[0].salePrice);
           cartPositions.push(data.products[0].name);
