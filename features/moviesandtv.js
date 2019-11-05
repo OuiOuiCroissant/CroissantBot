@@ -65,7 +65,7 @@ module.exports = function (controller) {
       };
       });
 
-      controller.hears('Add to cart','message', function(bot, message){
+      controller.hears('Add to cart','message', async(bot, message) => {
 
         switch(message.attachment.payload.elements[0].buttons[0].payload){
           case 'movie-add-to-cart0':
@@ -110,7 +110,7 @@ module.exports = function (controller) {
         };
         console.log(cartValue,cartPositions);
 
-        bot.reply(messege, {
+        await bot.reply(messege, {
           text: 'You added item to cart',
           quick_replies: [
             {
