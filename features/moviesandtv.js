@@ -79,7 +79,7 @@ module.exports = function (controller) {
       'movie-add-to-cart8',
       'movie-add-to-cart9',], 'facebook_postback', async (bot, message) => {
 
-        switch(message.payload){
+        switch(message.postback.payload){
           case 'movie-add-to-cart0':
           cartValue.push(data.products[0].salePrice);
           cartPositions.push(data.products[0].name);
