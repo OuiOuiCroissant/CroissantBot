@@ -4,7 +4,7 @@ module.exports = function(controller) {
   controller.hears('Checkout','message', async(bot,message) => {
 
     await bot.reply(message, {
-      text:`Your bill is total: ${cartValue}`,
+      text:`Your bill is total: ${cartValue.reduce(reducer)}`,
       quick_replies: [
         {
           title:'Pay',
@@ -16,7 +16,8 @@ module.exports = function(controller) {
 
   controller.hears('Pay','message', async(bot,message) =>{
 
-    cartValue = [0];
+    cartValue.length = 0;
+    cartPositions.length = 0;
 
     await bot.reply(message, {
      quick_replies: [
