@@ -1,7 +1,7 @@
 module.exports = function(controller) {
   const { cartValue, cartPositions, reducer } = require('../bot');
 
-  controller.hears('Checkout','message', async(bot,message) => {
+  controller.hears('Checkout', 'message', async(bot,message) => {
 
     await bot.reply(message, {
       text:`Your bill is total: ${cartValue.reduce(reducer)}`,
@@ -14,7 +14,7 @@ module.exports = function(controller) {
     });
   });
 
-  controller.hears('Pay','message', async(bot,message) =>{
+  controller.hears('Pay', 'message', async(bot,message) =>{
 
     cartValue.length = 0;
     cartPositions.length = 0;
@@ -22,8 +22,8 @@ module.exports = function(controller) {
     await bot.reply(message, {
      quick_replies: [
        {
-         title: "Main menu",
-         payload: "main-menu"
+         title:'Main menu',
+         payload:'main-menu'
        }
      ]
     });

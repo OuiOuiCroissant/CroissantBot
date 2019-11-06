@@ -82,10 +82,8 @@ controller.ready(() => {
 
 });
 
+console.log(`I'm working`);
 
-bby.products(8880044,{show:`name,salePrice,categoryPath.name,class`}).then(function(data){
-  console.log(data.name);
-});
 
 controller.webserver.get('/', (req, res) => {
 

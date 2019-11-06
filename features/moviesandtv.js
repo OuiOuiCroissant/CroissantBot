@@ -9,14 +9,14 @@ module.exports = function (controller) {
       for (let i=0; i<10; i++) {
         var attachment = {
           type:'template',
-          payload:{
+          payload: {
             template_type:'generic',
-            elements:[
+            elements: [
               {
                 title: data.products[i].name,
                 image_url: data.products[i].image,
                 subtitle: data.products[i].salePrice + '$',
-                buttons:[
+                buttons: [
                   {
                     type:'postback',
                     title:'Add to cart',
@@ -31,8 +31,8 @@ module.exports = function (controller) {
         bot.reply(message, {
          quick_replies: [
            {
-             title: "Main menu",
-             payload: "main-menu"
+             title: 'Main menu',
+             payload: 'main-menu'
            }
           ],
          attachment: attachment
@@ -52,7 +52,7 @@ module.exports = function (controller) {
     'movie-add-to-cart8',
     'movie-add-to-cart9'], 'facebook_postback', async (bot, message) => {
 
-      switch(message.postback.payload){
+      switch(message.postback.payload) {
         case 'movie-add-to-cart0':
         cartValue.push(data.products[0].salePrice);
         cartPositions.push(data.products[0].name);
@@ -99,8 +99,8 @@ module.exports = function (controller) {
         text: 'You added item to cart',
         quick_replies: [
           {
-            title: "Main menu",
-            payload: "main-menu"
+            title:'Main menu',
+            payload:'main-menu'
           },
           {
             title:'View cart',
