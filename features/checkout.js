@@ -20,12 +20,13 @@ module.exports = function(controller) {
     cartPositions.length = 0;
 
     await bot.reply(message, {
-     quick_replies: [
-       {
-         title:'Main menu',
-         payload:'main-menu'
-       }
-     ]
+      text:'You have successfuly ordered'
+      quick_replies: [
+        {
+          title:'Main menu',
+          payload:'main-menu'
+        }
+      ]
     });
   });
 }
