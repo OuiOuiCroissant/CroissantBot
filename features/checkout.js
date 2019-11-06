@@ -24,8 +24,7 @@ module.exports = function(controller) {
          title: "Main menu",
          payload: "main-menu"
        }
-      ],
-     attachment: attachment
+     ]
     });
   });
 }
