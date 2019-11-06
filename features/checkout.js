@@ -20,7 +20,7 @@ module.exports = function(controller) {
     cartPositions.length = 0;
 
     await bot.reply(message, {
-      text:'You have successfuly ordered'
+      text:'You have successfuly ordered',
       quick_replies: [
         {
           title:'Main menu',

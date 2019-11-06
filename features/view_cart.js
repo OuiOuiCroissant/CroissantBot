@@ -6,6 +6,7 @@ module.exports = function(controller) {
 
     if (cartValue.length==0) {
       await bot.reply(message, {
+        text:'Your cart is empty',
         quick_replies: [
           {
             title:'Checkout',
