@@ -1,8 +1,8 @@
 module.exports = function(controller) {
 
-    controller.hears('Get Started', 'message',  async(bot, message) => {
+    controller.hears('Get Started', 'message', async(bot, message) => {
 
-        await bot.reply(message,{
+        await bot.reply(message, {
             text: 'Lets start',
             quick_replies: [
             {
@@ -15,7 +15,7 @@ module.exports = function(controller) {
 
     controller.hears('Main menu', 'message', async(bot, message) => {
 
-      await bot.reply(message,{
+      await bot.reply(message, {
         text:'Chose option',
         quick_replies: [
           {

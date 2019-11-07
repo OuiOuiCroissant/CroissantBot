@@ -1,9 +1,9 @@
 module.exports = function (controller) {
   const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
-  const { cartValue, cartPositions, reducer } = require('../bot');
+  const { cartValue, cartPositions } = require('../bot');
 
-  bby.products('categoryPath.id=cat02015',{show:`name,salePrice,image`}).then(function(data){
+  bby.products('categoryPath.id=cat02015', {show:`name,salePrice,image`}).then(function(data){
 
     controller.hears('Movies & TV Shows', 'message', function(bot, message) {
       for (let i=0; i<10; i++) {
@@ -37,9 +37,8 @@ module.exports = function (controller) {
           ],
          attachment: attachment
         });
-      };
+      }
     });
-
 
     controller.hears(['movie-add-to-cart0',
     'movie-add-to-cart1',
@@ -93,7 +92,7 @@ module.exports = function (controller) {
         cartValue.push(data.products[9].salePrice);
         cartPositions.push(data.products[9].name);
         break;
-      };
+      }
 
       await bot.reply(message, {
         text: 'You added item to cart',

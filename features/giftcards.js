@@ -1,7 +1,9 @@
 module.exports = function (controller) {
   const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
-  bby.products('categoryPath.id=pcmcat325900050007',{show:`name,salePrice,image`}).then(function(data){
+  const { cartValue, cartPositions } = require('../bot');
+
+  bby.products('categoryPath.id=pcmcat325900050007', {show:`name,salePrice,image`}).then(function(data){
 
     controller.hears('Specialty gift cards', 'message', function(bot, message) {
       for (let i=0; i<10; i++) {
@@ -35,7 +37,7 @@ module.exports = function (controller) {
           ],
          attachment: attachment
         });
-      };
+      }
     });
 
     controller.hears(['gift-add-to-cart0',
@@ -90,9 +92,9 @@ module.exports = function (controller) {
         cartValue.push(data.products[9].salePrice);
         cartPositions.push(data.products[9].name);
         break;
-      };
+      }
 
-      await bot.reply(messege, {
+      await bot.reply(message, {
         text: 'You added item to cart',
         quick_replies: [
           {

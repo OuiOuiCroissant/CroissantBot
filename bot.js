@@ -7,7 +7,7 @@
 // Import Botkit's core features
 const { Botkit } = require('botkit');
 const { BotkitCMSHelper } = require('botkit-plugin-cms');
-const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
+//DON'T FORGET TO DELETE const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
 const cartValue = [];
 const cartPositions = [];

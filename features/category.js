@@ -1,4 +1,4 @@
-module.exports = function(controller)  {
+module.exports = function(controller) {
 
   controller.hears('Catalogue', 'message', async(bot, message) => {
 

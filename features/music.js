@@ -1,9 +1,9 @@
 module.exports = function (controller) {
   const bby = require('bestbuy')('TGp7jkZIbKOzfRTDzkofjo2O');
 
-  const { cartValue, cartPositions, reducer } = require('../bot');
+  const { cartValue, cartPositions } = require('../bot');
 
-  bby.products('categoryPath.id=cat02001',{show:`name,salePrice,image`}).then(function(data){
+  bby.products('categoryPath.id=cat02001', {show:`name,salePrice,image`}).then(function(data){
 
     controller.hears('Music', 'message', function(bot, message) {
       for (let i=0; i<10; i++) {
@@ -37,7 +37,7 @@ module.exports = function (controller) {
           ],
          attachment: attachment
         });
-      };
+      }
     });
 
     controller.hears(['music-add-to-cart0',
@@ -92,10 +92,10 @@ module.exports = function (controller) {
         cartValue.push(data.products[9].salePrice);
         cartPositions.push(data.products[9].name);
         break;
-      };
+      }
 
       await bot.reply(message, {
-        text:'You added item to cart',
+        text: 'You added item to cart',
         quick_replies: [
           {
             title:'Main menu',

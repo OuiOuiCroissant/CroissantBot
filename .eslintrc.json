@@ -13,5 +13,15 @@
         "ecmaVersion": 2018
     },
     "rules": {
+      "no-multi-spaces": "error",
+      "comma-style": ["error", "last"],
+      "comma-spacing": ["error", { "before": false, "after": true }],
+      "no-unused-vars": "error",
+      "semi-style": ["error", "last"],
+      "semi-spacing": "error",
+      "no-extra-semi": "error",
+      "switch-colon-spacing": "error",
+      "no-extra-parens": "error",
+      "arrow-parens": ["error", "always"]
     }
 }
