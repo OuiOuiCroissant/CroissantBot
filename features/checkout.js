@@ -7,11 +7,11 @@ module.exports = function (controller) {
 
   controller.hears('Checkout', 'message', async (bot, message) => {
     await bot.reply(message, {
-      text: `Your bill is total: ${cartValue.reduce(reducer)} \n Few steps left for make an order`,
+      text: `Your bill is total: ${cartValue.reduce(reducer)}\nFew steps left for make an order`,
       quick_replies: [
         {
           title: 'Continue',
-          payload: 'continue'
+          payload: 'continue',
         },
       ],
     });
@@ -20,18 +20,18 @@ module.exports = function (controller) {
   controller.hears('Continue', 'message', async (bot, message) => {
     createUser(message.sender.id);
     await bot.reply(message, {
-      text: 'Your phone number in format +XXXXXXXXXXXX'
+      text: 'Your phone number in format: +XXXXXXXXXXXX',
     });
   });
 
-  controller.hears(async(message) => { return message.text.substring(0,1) == '+'}, 'message', async(bot, message) => {
+  controller.hears(async (message) => message.text.substring(0, 1) == '+', 'message', async (bot, message) => {
     addPhone(message.sender.id, message.text);
     await bot.reply(message, {
-      text: 'Your adress in format ~YOUR_ADRESS'
+      text: 'Your adress in format: ~YOUR_ADRESS',
     });
   });
 
-  controller.hears(async(message) => { return message.text.substring(0,1) == '~'}, 'message', async(bot, message) => {
+  controller.hears(async (message) => message.text.substring(0, 1) == '~', 'message', async (bot, message) => {
     addAdress(message.sender.id, message.text.substring(1));
     await bot.reply(message, {
       text: 'Confirm your order',
@@ -39,8 +39,8 @@ module.exports = function (controller) {
         {
           title: 'Confirm',
           payload: 'confirm',
-        }
-      ]
+        },
+      ],
     });
   });
 
@@ -55,8 +55,8 @@ module.exports = function (controller) {
         {
           title: 'Main menu',
           payload: 'main-menu',
-        }
-      ]
+        },
+      ],
     });
   });
 };

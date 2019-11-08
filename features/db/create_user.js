@@ -9,9 +9,9 @@ module.exports = function createUser(senderId) {
   User.findOne({ fbId: senderId }, (err, res) => {
     if (err) throw err;
     if (res === null) {
-      User.create({fbId:senderId}, (err, res) => {
+      User.create({ fbId: senderId }, (err, res) => {
         if (err) throw err;
       });
     }
   });
-}
+};

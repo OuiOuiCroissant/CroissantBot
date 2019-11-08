@@ -6,7 +6,7 @@ module.exports = function myPurchases(senderId, myPurchases) {
 
   mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true });
 
-  User.findOneAndUpdate({ fbId: senderId }, { $push: {myPurchases: myPurchases} }, {new: true}, (err, res) => {
+  User.findOneAndUpdate({ fbId: senderId }, { $push: { myPurchases } }, { new: true }, (err, res) => {
     if (err) throw err;
   });
-}
+};
