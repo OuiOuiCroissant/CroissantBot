@@ -44,7 +44,7 @@ module.exports = function (controller) {
   });
 
   controller.hears('Confirm', 'message', async (bot, message) => {
-    myPurchases(message.sender.id, cartPositins);
+    myPurchases(message.sender.id, cartPositions);
     cartValue.length = 0;
     cartPositions.length = 0;
 
