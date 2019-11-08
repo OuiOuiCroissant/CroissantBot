@@ -79,9 +79,6 @@ controller.ready(() => {
   }
 });
 
-console.log('I\'m working');
-
-
 controller.webserver.get('/', (req, res) => {
   res.send(`This app is running Botkit ${controller.version}.`);
 });
