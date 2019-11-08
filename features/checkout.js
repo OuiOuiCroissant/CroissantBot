@@ -31,7 +31,7 @@ module.exports = function (controller) {
   });
 
   controller.hears(async(message) => { return message.text.substring(0,1) == '~'}, 'message', async(bot, message) => {
-    addAdress(message.sender.id, message.text);
+    addAdress(message.sender.id, message.text.substring(1));
     await bot.reply(message, {
       text: 'Confirm your order',
       quick_replies: [
