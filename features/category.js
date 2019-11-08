@@ -54,16 +54,4 @@ module.exports = function (controller) {
       ],
     });
   });
-
-  controller.hears('Get referal link', 'message', async (bot, message) => {
-    await bot.reply(message, {
-      text: 'Currently that don\'t make anything',
-      quick_replies: [
-        {
-          title: 'Main menu',
-          payload: 'main-menu',
-        },
-      ],
-    });
-  });
 };
