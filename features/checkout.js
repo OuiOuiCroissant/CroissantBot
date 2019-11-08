@@ -2,6 +2,7 @@ module.exports = function (controller) {
   const createUser = require('./db/create_user.js');
   const addPhone = require('./db/add_phone.js');
   const addAdress = require('./db/add_adress.js');
+  const myPurchases = require('./db/my_purchases.js');
   const { cartValue, cartPositions, reducer } = require('../bot');
 
   controller.hears('Checkout', 'message', async (bot, message) => {
